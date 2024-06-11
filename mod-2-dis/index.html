@@ -62,6 +62,14 @@
             bottom: 0;
         }
 
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
         .restaurant-list, .restaurant-review, .add-review {
             margin: 20px auto;
             max-width: 800px;
@@ -129,40 +137,38 @@
         <h1>Restaurant Review Site</h1>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#restaurants">Restaurants</a></li>
-                <li><a href="#add-review">Add Review</a></li>
+                <li><a href="#home" onclick="showSection('home')">Home</a></li>
+                <li><a href="#restaurants" onclick="showSection('restaurants')">Restaurants</a></li>
+                <li><a href="#add-review" onclick="showSection('add-review')">Add Review</a></li>
             </ul>
         </nav>
     </header>
 
-    <main id="home">
-        <section>
+    <main>
+        <section id="home" class="section active">
             <h2>Welcome to Our Restaurant Review Site</h2>
             <p>Discover the best dining experiences with honest reviews from food enthusiasts. Share your own reviews and help others find the perfect spot for their next meal.</p>
         </section>
-    </main>
 
-    <main id="restaurants">
-        <section class="restaurant-list">
+        <section id="restaurants" class="section">
             <h2>Restaurants</h2>
-            <div class="restaurant-item">
-                <h3>Restaurant A</h3>
-                <p>Rating: 4.5</p>
-                <p>Location: City Center</p>
-                <button class="btn" onclick="showReviews('Restaurant A')">View Reviews</button>
-            </div>
-            <div class="restaurant-item">
-                <h3>Restaurant B</h3>
-                <p>Rating: 4.0</p>
-                <p>Location: Downtown</p>
-                <button class="btn" onclick="showReviews('Restaurant B')">View Reviews</button>
+            <div class="restaurant-list">
+                <div class="restaurant-item">
+                    <h3>Restaurant A</h3>
+                    <p>Rating: 4.5</p>
+                    <p>Location: City Center</p>
+                    <button class="btn" onclick="showReviews('Restaurant A')">View Reviews</button>
+                </div>
+                <div class="restaurant-item">
+                    <h3>Restaurant B</h3>
+                    <p>Rating: 4.0</p>
+                    <p>Location: Downtown</p>
+                    <button class="btn" onclick="showReviews('Restaurant B')">View Reviews</button>
+                </div>
             </div>
         </section>
-    </main>
 
-    <main id="restaurant-review">
-        <section class="restaurant-review">
+        <section id="restaurant-review" class="section">
             <h2>Reviews for <span id="restaurant-name">Restaurant A</span></h2>
             <div class="review-item">
                 <h3>John Doe</h3>
@@ -174,12 +180,10 @@
                 <p>Rating: 4</p>
                 <p>Nice ambiance but a bit pricey.</p>
             </div>
-            <button class="btn" onclick="showAddReview()">Add Review</button>
+            <button class="btn" onclick="showSection('add-review')">Add Review</button>
         </section>
-    </main>
 
-    <main id="add-review">
-        <section class="add-review">
+        <section id="add-review" class="section">
             <h2>Add a Review for <span id="review-restaurant-name">Restaurant A</span></h2>
             <form>
                 <label for="reviewer-name">Name:</label>
@@ -199,25 +203,17 @@
     </footer>
 
     <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+
         function showReviews(restaurantName) {
             document.getElementById('restaurant-name').textContent = restaurantName;
-            document.getElementById('home').style.display = 'none';
-            document.getElementById('restaurants').style.display = 'none';
-            document.getElementById('restaurant-review').style.display = 'block';
-            document.getElementById('add-review').style.display = 'none';
-        }
-
-        function showAddReview() {
-            var restaurantName = document.getElementById('restaurant-name').textContent;
             document.getElementById('review-restaurant-name').textContent = restaurantName;
-            document.getElementById('home').style.display = 'none';
-            document.getElementById('restaurants').style.display = 'none';
-            document.getElementById('restaurant-review').style.display = 'none';
-            document.getElementById('add-review').style.display = 'block';
+            showSection('restaurant-review');
         }
-
-        document.getElementById('restaurant-review').style.display = 'none';
-        document.getElementById('add-review').style.display = 'none';
     </script>
     
 </body>
