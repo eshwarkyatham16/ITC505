@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivering Fonts to Clients (Browsers)</title>
+    <style>
+        @font-face {
+            font-family: 'LilitaOne-Regular';
+            src: url('./LilitaOne-Regular.ttf') format('truetype');
+        }
+        body {
+            font-family: 'LilitaOne-Regular', sans-serif;
+            background-color: #f0f8ff;
+            color: #2c3e50;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            font-size: 18px;
+        }
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #ecf0f1;
+            text-align: center;
+            margin: 0;
+        }
+        h2 {
+            color: #3498db;
+            text-align: center;
+        }
+        ol {
+            padding-left: 40px;
+        }
+        code {
+            background-color: #ecf0f1;
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        pre {
+            background-color: #ecf0f1;
+            border-radius: 4px;
+            overflow: auto;
+        }
+        footer {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        #final-msg {
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Delivering Fonts to Clients (Browsers)</h1>
+    </header>
+    <main>
+        <p>This page describes how to deliver a specific font to a client (browser) using the <code>@font-face</code> rule in CSS.</p>
+        <h2>Steps to Deliver a Font</h2>
+        <ol>
+            <li><strong>Choose a Font:</strong> Select a font file (e.g., LilitaOne-Regular.ttf) from any source. I have choosen google fonts.</li>
+            <li><strong>Download the Font:</strong> Download the font from <a href="https://fonts.google.com/selection" target="_blank">Google Fonts.</a></li>
+            <li><strong>Upload the Font:</strong> Place the font file on your web server in a directory, for instance, /lab-3/.</li>
+            <li><strong>Modify CSS:</strong> Use the <code>@font-face</code> rule in your CSS to define the font:
+                <pre>
+                    <code>
+@font-face {
+    font-family: 'LilitaOne-Regular';
+    src: url('/fonts/LilitaOne-Regular.ttf') format('truetype');
+}
+body {
+    font-family: 'LilitaOne-Regular', sans-serif;
+}
+                    </code>
+                </pre>
+            </li>
+        </ol>
+        <p id="final-msg">By following these steps, the selected font will be applied to the client's browser when they open the website.</p>
+    </main>
+    <footer>
+        <p>Last updated: 
+            <span id="lastModified"></span>
+        </p>
+    </footer>
+    <script type="text/javascript">
+         var x = document.lastModified;
+         document.getElementById('lastModified').textContent = x;
+    </script>
+</body>
+</html>
