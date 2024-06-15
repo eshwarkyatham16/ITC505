@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eshwar Kyatham's Portfolio</title>
+    <style>
+        /* Element selectors */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #1e90ff;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em 2em;
+        }
+
+        header img {
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        header a,
+        footer a {
+            color: #1e90ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        section {
+            background: #fff;
+            padding: 2em;
+            margin-bottom: 2em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #1e90ff;
+            padding-bottom: 0.5em;
+            color: #1e90ff;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #f4f4f4;
+            margin: 0.5em 0;
+            padding: 0.5em;
+            border-left: 4px solid #1e90ff;
+        }
+
+        /* ID selector */
+        #intro p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Class selectors */
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+
+        .bordered {
+            border: 1px solid #333;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        /* Cascading */
+        .highlight {
+            color: red;
+        }
+
+        .nested .highlight {
+            color: green;
+        }
+
+        /* Inheritance */
+        .nested p {
+            color: blue;
+        }
+
+        .nested p span {
+            color: inherit;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (min-width: 600px) {
+            body {
+                margin: 0 auto;
+                max-width: 800px;
+            }
+        }
+
+        footer {
+            background-color: #1e90ff;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Eshwar Kyatham</h1>
+        <img src="./passport.jpeg" width="100" alt="Eshwar Kyatham's Photo" />
+    </header>
+
+    <main>
+        <section id="intro" class="bordered">
+            <h2>About Me</h2>
+            <p>I am a Software Engineer with extensive experience full stack web development, optimizing development pipelines, and mentoring new hires.</p>
+        </section>
+
+        <section id="skills" class="bordered">
+            <h2>Skills</h2>
+            <div class="nested">
+                <h3>Languages</h3>
+                <p>C, C#, <span class="highlight">JavaScript</span>, HTML/CSS</p>
+                <h3>Frameworks</h3>
+                <p>Angular, ReactJS, .NET</p>
+                <h3>Database/Tools</h3>
+                <p>MS SQL Server (T-SQL), AWS, Azure, Git</p>
+            </div>
+        </section>
+
+        <section id="work-experience" class="bordered">
+            <h2>Work Experience</h2>
+            <h3>Techigai, Hyderabad, India</h3>
+            <p>Software Engineer (March 2021 - December 2023)</p>
+            <ul>
+                <li>Directed the transition of the ASP.NET MVC application to .NET and ReactJS, boosting performance by
+                    ~50%.</li>
+                <li>Optimized the development pipeline by introducing GIT hooks, reducing deployment issues by 30%.</li>
+                <li>Organized technical sessions for new hires, enhancing software development skills and project
+                    delivery.</li>
+            </ul>
+        </section>
+
+        <section id="education" class="bordered">
+            <h2>Education</h2>
+            <p>Northern Arizona University, Flagstaff, Arizona - Master’s, Computer Science (Expected December 2025)</p>
+            <p>Brilliant Institute of Engineering and Technology, Hyderabad, India - Bachelor’s, Computer Science
+                (August 2022)</p>
+        </section>
+
+        <section id="projects" class="bordered">
+            <h2>Projects</h2>
+            <h3>CivicServe</h3>
+            <ul>
+                <li>Designed and implemented responsive UI modules using ReactJS, increasing user retention by 30%.</li>
+                <li>Enhanced document security in Azure Blob Storage with AES-256 encryption, reducing potential
+                    security breaches by 40%.</li>
+                <li>Migrated .NET framework Code First models to .NET Code First models seamlessly.</li>
+            </ul>
+            <h3>HALO Branded Solutions</h3>
+            <ul>
+                <li>Engineered a UI authentication framework with dynamic API authorization, decreasing security
+                    breaches by 30%.</li>
+                <li>Integrated different external systems with the application through RESTful APIs.</li>
+                <li>Leveraged AWS Lambda, SQS, S3, and SES to enhance functionality and productivity.</li>
+                <li>Incorporated a fail-safe mechanism in Jenkins for email alerts on build failure, reducing resolution
+                    time by 20%.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact: <a href="mailto:ek582@nau.edu">ek582@nau.edu</a> | Phone: +1 928-225-1141 | LinkedIn: <a
+                href="https://linkedin.com/in/eshwarkyatham/">Eshwar Kyatham</a></p>
+    </footer>
+</body>
+
+</html>
