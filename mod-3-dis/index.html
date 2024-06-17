@@ -16,7 +16,7 @@
             color: #333;
         }
 
-        header {
+        header div {
             background-color: #1e90ff;
             color: #fff;
             display: flex;
@@ -25,17 +25,17 @@
             padding: 1em 2em;
         }
 
-        header img {
+        header div img {
             border-radius: 50%;
             border: 2px solid #fff;
         }
 
-        header h1 {
+        header div h1 {
             margin: 0;
             font-size: 2em;
         }
 
-        header a,
+        header div a,
         footer a {
             color: #1e90ff;
             text-decoration: none;
@@ -68,7 +68,7 @@
 
         main {
             padding: 2em;
-            padding-bottom: 60px; 
+            padding-bottom: 60px;
         }
 
         section {
@@ -159,22 +159,25 @@
 
 <body>
     <header>
-        <h1>Eshwar Kyatham</h1>
-        <img src="./passport.jpeg" width="100" alt="Eshwar Kyatham's Photo" />
+        <div>
+            <h1>Eshwar Kyatham</h1>
+            <img src="./passport.jpeg" width="100" alt="Eshwar Kyatham's Photo" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#intro">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#intro">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-        </ul>
-    </nav>
 
     <main>
         <section id="intro" class="bordered">
             <h2>About Me</h2>
-            <p>I am a Software Engineer with extensive experience full stack web development, optimizing development pipelines, and mentoring new hires.</p>
+            <p>I am a Software Engineer with extensive experience full stack web development, optimizing development
+                pipelines, and mentoring new hires.</p>
         </section>
 
         <section id="skills" class="bordered">
@@ -194,21 +197,25 @@
             <h3>CivicServe</h3>
             <ul>
                 <li>Designed and implemented responsive UI modules using ReactJS, increasing user retention by 30%.</li>
-                <li>Enhanced document security in Azure Blob Storage with AES-256 encryption, reducing potential security breaches by 40%.</li>
+                <li>Enhanced document security in Azure Blob Storage with AES-256 encryption, reducing potential
+                    security breaches by 40%.</li>
                 <li>Migrated .NET framework Code First models to .NET Code First models seamlessly.</li>
             </ul>
             <h3>HALO Branded Solutions</h3>
             <ul>
-                <li>Engineered a UI authentication framework with dynamic API authorization, decreasing security breaches by 30%.</li>
+                <li>Engineered a UI authentication framework with dynamic API authorization, decreasing security
+                    breaches by 30%.</li>
                 <li>Integrated different external systems with the application through RESTful APIs.</li>
                 <li>Leveraged AWS Lambda, SQS, S3, and SES to enhance functionality and productivity.</li>
-                <li>Incorporated a fail-safe mechanism in Jenkins for email alerts on build failure, reducing resolution time by 20%.</li>
+                <li>Incorporated a fail-safe mechanism in Jenkins for email alerts on build failure, reducing resolution
+                    time by 20%.</li>
             </ul>
         </section>
     </main>
 
     <footer>
-        <p>Contact: <a href="mailto:ek582@nau.edu">ek582@nau.edu</a> | Phone: +1 928-225-1141 | LinkedIn: <a href="https://linkedin.com/in/eshwarkyatham/">Eshwar Kyatham</a></p>
+        <p>Contact: <a href="mailto:ek582@nau.edu">ek582@nau.edu</a> | Phone: +1 928-225-1141 | LinkedIn: <a
+                href="https://linkedin.com/in/eshwarkyatham/">Eshwar Kyatham</a></p>
     </footer>
 </body>
 
