@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <svg width="100%" height="100%">
+        <circle cx="50" cy="50" r="40" fill="blue" />
+        <rect width="200" height="100" x="150" y="150" rx="20" ry="20" fill="purple" />
+        <circle cx="250" cy="250" r="50" fill="orange" />
+        <path id="circlePath" d="M 250,250 m -50,0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0" fill="none"
+            stroke="none" />
+        <image width="50" height="50"
+            href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnhoHDIbSi0WJkzGYr6wemnCS2OzSRkhokmA&s">
+            <animateMotion repeatCount="indefinite" dur="10s">
+                <mpath href="#circlePath" />
+            </animateMotion>
+        </image>
+        <text x="500" y="500" fill="white" stroke="blue" font-size="35">Eshwar Kyatham</text>
+        <polygon points="100,10 40,198 190,78 10,78 160,198"
+            fill="red" stroke="green" stroke-width="5" fill-rule="evenodd" y="10" />
+    </svg>
+</body>
+
+</html>

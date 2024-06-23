@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e1d7d7d6;
+}
+
+@keyframes circleOneAni {
+    0% {
+        cx: 50;
+        cy: 50;
+        r: 40;
+        fill: blue;
+    }
+    25% {
+        cx: 150;
+        cy: 150;
+        r: 30;
+        fill: green;
+    }
+    50% {
+        cx: 250;
+        cy: 50;
+        r: 50;
+        fill: yellow;
+    }
+    75% {
+        cx: 350;
+        cy: 150;
+        r: 40;
+        fill: pink;
+    }
+    100% {
+        cx: 450;
+        cy: 50;
+        r: 40;
+        fill: red;
+    }
+}
+
+@keyframes rectAni {
+    0% {
+        x: 150;
+        y: 150;
+        rx: 30;
+        ry: 30;
+        width: 200;
+        height: 100;
+        fill: purple;
+    }
+    25% {
+        x: 250;
+        y: 250;
+        rx: 40;
+        ry: 40;
+        width: 300;
+        height: 200;
+        fill: yellow;
+    }
+    50% {
+        x: 350;
+        y: 150;
+        rx: 50;
+        ry: 50;
+        width: 400;
+        height: 300;
+        fill: blue;
+    }
+    75% {
+        x: 450;
+        y: 250;
+        rx: 40;
+        ry: 40;
+        width: 300;
+        height: 200;
+        fill: green;
+    }
+    100% {
+        x: 550;
+        y: 150;
+        rx: 30;
+        ry: 30;
+        width: 200;
+        height: 100;
+        fill: orange;
+    }
+}
+
+@keyframes circleTwoAni {
+    0% {
+        cx: 250;
+        cy: 250;
+        r: 50;
+        fill: orange;
+    }
+    25% {
+        cx: 350;
+        cy: 350;
+        r: 40;
+        fill: blue;
+    }
+    50% {
+        cx: 450;
+        cy: 250;
+        r: 30;
+        fill: green;
+    }
+    75% {
+        cx: 550;
+        cy: 350;
+        r: 50;
+        fill: red;
+    }
+    100% {
+        cx: 650;
+        cy: 250;
+        r: 40;
+        fill: purple;
+    }
+}
+
+circle {
+    animation: circleOneAni 6s infinite alternate;
+}
+
+rect {
+    animation: rectAni 8s infinite alternate;
+}
+
+.myCircle {
+    animation: circleTwoAni 10s infinite alternate;
+}
