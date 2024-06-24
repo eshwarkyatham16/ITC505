@@ -1,134 +1,96 @@
 body {
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #e1d7d7d6;
+    background: linear-gradient(135deg, #ffcc33, #ff6699);
+    overflow: hidden;
+    margin: 0;
 }
 
-@keyframes circleOneAni {
-    0% {
-        cx: 50;
-        cy: 50;
-        r: 40;
-        fill: blue;
-    }
-    25% {
-        cx: 150;
-        cy: 150;
-        r: 30;
-        fill: green;
-    }
-    50% {
-        cx: 250;
-        cy: 50;
-        r: 50;
-        fill: yellow;
-    }
-    75% {
-        cx: 350;
-        cy: 150;
-        r: 40;
-        fill: pink;
-    }
+svg {
+    width: 400px;
+    height: 400px;
+}
+
+.shape {
+    animation: changeColor 6s infinite, scaleUpDown 6s infinite, moveAround 6s infinite;
+}
+
+.circle {
+    fill: #3498db;
+    animation-delay: 0s;
+}
+
+.rect {
+    fill: #e74c3c;
+    animation-delay: 1s;
+}
+
+.cone {
+    fill: #f1c40f;
+    animation-delay: 2s;
+}
+
+.text {
+    fill: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    animation: fadeInOut 6s infinite;
+}
+
+@keyframes changeColor {
+
+    0%,
     100% {
-        cx: 450;
-        cy: 50;
-        r: 40;
-        fill: red;
+        fill: currentColor;
     }
-}
 
-@keyframes rectAni {
-    0% {
-        x: 150;
-        y: 150;
-        rx: 30;
-        ry: 30;
-        width: 200;
-        height: 100;
-        fill: purple;
-    }
-    25% {
-        x: 250;
-        y: 250;
-        rx: 40;
-        ry: 40;
-        width: 300;
-        height: 200;
-        fill: yellow;
-    }
     50% {
-        x: 350;
-        y: 150;
-        rx: 50;
-        ry: 50;
-        width: 400;
-        height: 300;
-        fill: blue;
-    }
-    75% {
-        x: 450;
-        y: 250;
-        rx: 40;
-        ry: 40;
-        width: 300;
-        height: 200;
-        fill: green;
-    }
-    100% {
-        x: 550;
-        y: 150;
-        rx: 30;
-        ry: 30;
-        width: 200;
-        height: 100;
-        fill: orange;
+        fill: #ffffff;
     }
 }
 
-@keyframes circleTwoAni {
-    0% {
-        cx: 250;
-        cy: 250;
-        r: 50;
-        fill: orange;
+@keyframes scaleUpDown {
+
+    0%,
+    100% {
+        transform: scale(1);
     }
-    25% {
-        cx: 350;
-        cy: 350;
-        r: 40;
-        fill: blue;
-    }
+
     50% {
-        cx: 450;
-        cy: 250;
-        r: 30;
-        fill: green;
+        transform: scale(1.5);
     }
-    75% {
-        cx: 550;
-        cy: 350;
-        r: 50;
-        fill: red;
-    }
+}
+
+@keyframes moveAround {
+
+    0%,
     100% {
-        cx: 650;
-        cy: 250;
-        r: 40;
-        fill: purple;
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(20px, -20px);
+    }
+
+    50% {
+        transform: translate(40px, 0);
+    }
+
+    75% {
+        transform: translate(20px, 20px);
     }
 }
 
-circle {
-    animation: circleOneAni 6s infinite alternate;
-}
+@keyframes fadeInOut {
 
-rect {
-    animation: rectAni 8s infinite alternate;
-}
+    0%,
+    100% {
+        opacity: 1;
+    }
 
-.myCircle {
-    animation: circleTwoAni 10s infinite alternate;
+    50% {
+        opacity: 0.5;
+    }
 }
