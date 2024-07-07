@@ -1,0 +1,27 @@
+What challenges did you encounter in implementing structural CSS, grid layout, and flexbox in your webpage?
+
+The need for responsive design has driven the popularity and evolution of structural CSS, like CSS Grid and Flexboxty, and managing the combination of grid and flexbox layouts. Additionally, achieving a responsive design that looks good on all devices required significant testing and adjustments.
+
+What rationale motivated your decisions regarding structure, layout, and design responsiveness?
+
+The main motivations were to ensure a user-friendly experience, create a visually appealing design, optimize performance, and maintain clean, modular CSS for easier updates. These goals guided the structure and layout decisions, ensuring the site is both functional and attractive.
+
+Where have you used absolute and relative positioning in your webpage, respectively? Why was one preferable over the other in those instances?
+
+Absolute positioning was used for the `.hero::before` pseudo-element to create a semi-transparent overlay, ensuring full coverage without affecting other elements. Relative positioning was used for the `.hero h1` and `.hero p` to control their placement within the container, making it easier to layer them correctly over the overlay.
+
+Provide examples of when you implemented media queries and their effects on your website when viewed from different devices.
+
+Media queries were used to change the navbar from a horizontal to a vertical layout on smaller screens, improving navigation on mobile devices. Another media query adjusted the section content layout from two columns to one, ensuring readability on smaller screens.
+
+Compare your experience of using structural CSS against traditional CSS. Explain why CSS Grid and Flexbox are more effective tools for creating responsive designs.
+
+Using CSS Grid and Flexbox was more effective because they provide powerful tools for creating complex, responsive layouts with less code. These tools allow for better control over positioning and alignment, making it easier to implement responsive designs compared to traditional CSS methods, which often require more workarounds and are less flexible.
+
+How effectively were you able to incorporate images into your layout? What type of images did you choose and why?
+
+Images were effectively incorporated into the layout using grid and flexbox to ensure they are responsive and well-aligned. High-quality images related to e-scooters and urban mobility were chosen to visually enhance the content and overall appeal of the website.
+
+Finally, describe how you see the role of responsive design in modern web development. How does it relate to the popularity and evolution of structural CSS?
+
+Responsive design is crucial in modern web development as it ensures websites are usable and visually appealing across all devices, improving user experience and accessibility. The need for responsive design has driven the popularity and evolution of structural CSS, like CSS Grid and Flexbox, which simplify the creation of flexible, adaptive layouts.
