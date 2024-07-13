@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="shortcut icon"
+      href="https://www.svgrepo.com/show/143264/tic-tac-toe-game.svg"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Welcome to the Tic-Tac-Toe Game</h1>
+      </header>
+      <nav class="sidebar">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <main class="content">
+        <div class="game">
+          <div id="board">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+          </div>
+          <button id="restartButton">Restart</button>
+        </div>
+      </main>
+      <aside class="advertisement">
+        <div class="ad-banner">Advertisement</div>
+        <a
+          href="https://www.amazon.com/fire-tv-stick-with-3rd-gen-alexa-voice-remote/dp/B08C1W5N87/ref=hotw_2024_otc_d_dag?pf_rd_p=89e36650-521f-4332-9859-e02f75dba648&pf_rd_r=S7CB8BGC23D76R3A9W6E&sr=1-5-a0e2e339-3c8e-443a-8443-a5af3ff7b46c"
+          target="_blank"
+        >
+          <img
+            src="https://m.media-amazon.com/images/I/51TjJOTfslL._AC_SX679_.jpg"
+            alt="Advertisement"
+          />
+        </a>
+      </aside>
+      <footer class="footer">
+        <p>
+          Addendum: This Tic-Tac-Toe game allows two players to take turns and
+          play. The game checks for win conditions and highlights the winning
+          combination. The restart button resets the game. The main challenge
+          was implementing the win-checking logic and ensuring the game resets
+          correctly. This was resolved by resetting the game state and UI
+          elements when the restart button is clicked.
+        </p>
+        <p>Last updated: <span id="lastModified"></span></p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      var x = document.lastModified;
+      document.getElementById("lastModified").textContent = x;
+    </script>
+  </body>
+</html>
