@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Blog</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Recipe Blog</h1>
+    </header>
+    <main>
+      <section id="search-recipe">
+        <h2>Search Recipes</h2>
+        <div class="search">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search by title..."
+          />
+          <button id="search-button">Search</button>
+        </div>
+      </section>
+      <section id="recipe-list">
+        <h2>All Recipes</h2>
+        <!-- Recipes will be displayed here -->
+      </section>
+      <section id="add-recipe">
+        <h2>Add a New Recipe</h2>
+        <form id="recipe-form">
+          <input type="hidden" id="recipe-id" name="recipe-id" />
+          <label for="title" class="required">Title:</label>
+          <input type="text" id="title" name="title" required />
+          <label for="ingredients" class="required">Ingredients:</label>
+          <textarea id="ingredients" name="ingredients" required></textarea>
+          <label for="instructions" class="required">Instructions:</label>
+          <textarea id="instructions" name="instructions" required></textarea>
+          <label for="image-url" class="required">Image URL:</label>
+          <input type="url" id="image-url" name="image-url" required />
+          <button type="submit">Add Recipe</button>
+        </form>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
