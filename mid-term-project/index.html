@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choose Your Own Adventure</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Choose Your Own Adventure</h1>
+    </header>
+    <div id="story"></div>
+    <div id="choices"></div>
+    <div id="image"></div>
+    <section id="addendum">
+      <h2>Addendum</h2>
+      <p>
+        <strong>Process and Creative Choices:</strong>
+        Creating the "Choose Your Own Adventure" game involved structuring a
+        dynamic narrative with various paths and endings. The design choices
+        were focused on simplicity and ease of interaction, ensuring users could
+        easily follow the story and make choices without distraction. The
+        narrative elements were complemented with relevant images to enhance the
+        immersive experience.
+      </p>
+      <p>
+        <strong>Challenges Faced:</strong>
+        One challenge was ensuring that the story transitions smoothly between
+        different states, especially at the end of the game. To address this, we
+        implemented an endGame function that updates the story text, removes
+        choice buttons, and presents a restart option. Another challenge was
+        styling the game to be both visually appealing and responsive across
+        different devices, which required careful use of CSS transitions, hover
+        effects, and media queries.
+      </p>
+      <p>
+        <strong>Insights Gained:</strong>
+        This project provided insights into structuring interactive content in a
+        way that keeps users engaged. The importance of visual feedback and
+        smooth transitions became evident, as they significantly enhance user
+        experience. Additionally, incorporating responsive design principles
+        ensured that the game is accessible and enjoyable on both desktop and
+        mobile devices.
+      </p>
+    </section>
+    <footer>
+      <p>Last updated: <span id="lastModified"></span></p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+      var x = document.lastModified;
+      document.getElementById("lastModified").textContent = x;
+    </script>
+  </body>
+</html>
