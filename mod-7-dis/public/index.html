@@ -4,61 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Event Delegation and JSON Example</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 20px;
-        background-color: #f4f4f4;
-      }
-      .container {
-        max-width: 800px;
-        margin: auto;
-        background-color: white;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-      }
-      nav a {
-        margin-right: 20px;
-        text-decoration: none;
-        color: #007bff;
-      }
-      nav a:hover {
-        text-decoration: underline;
-      }
-      .section {
-        display: none;
-      }
-      .section.active {
-        display: block;
-      }
-      pre {
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        overflow-x: auto;
-      }
-      .output {
-        background-color: #eee;
-        padding: 20px;
-        border-radius: 5px;
-        margin-top: 20px;
-      }
-      h2 {
-        color: #333;
-      }
-      .task {
-        cursor: pointer;
-        padding: 10px;
-        margin: 5px;
-        background-color: lightgrey;
-      }
-      .task.clicked {
-        background-color: lightblue;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
@@ -187,63 +133,6 @@ console.log(stringifiedData);
         </div>
       </div>
     </div>
-
-    <script>
-      document
-        .getElementById("task-list")
-        .addEventListener("click", function (e) {
-          if (e.target && e.target.classList.contains("task")) {
-            e.target.classList.toggle("clicked");
-          }
-        });
-
-      const sections = {
-        "nav-tasks": "tasks",
-        "nav-status-codes": "status-codes",
-        "nav-json": "json-example",
-      };
-
-      document.querySelectorAll("nav a").forEach((link) => {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelectorAll(".section").forEach((section) => {
-            section.classList.remove("active");
-          });
-          document
-            .getElementById(sections[e.target.id])
-            .classList.add("active");
-        });
-      });
-
-      const movieCollection = `{
-          "movies": [
-              {
-                  "title": "Pokiri",
-                  "director": "Puri",
-                  "year": 2010,
-                  "genre": "Crime",
-                  "actors": ["Mahesh Babu", "Ali"]
-              },
-              {
-                  "title": "RRR",
-                  "director": "Raja mouli",
-                  "year": 2023,
-                  "genre": "Sci-Fi",
-                  "actors": ["NTR", "Ram Charan"]
-              }
-          ]
-      }`;
-
-      const parsedData = JSON.parse(movieCollection);
-      console.log(parsedData);
-
-      const stringifiedData = JSON.stringify(parsedData, null, 2);
-      console.log(stringifiedData);
-
-      document.getElementById("parsed-data-output").textContent =
-        JSON.stringify(parsedData, null, 2);
-      document.getElementById("stringified-data-output").textContent =
-        stringifiedData;
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
