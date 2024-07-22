@@ -21,7 +21,45 @@
       <input type="text" id="place" name="place" required /><br /><br />
       <button type="submit">Submit</button>
     </form>
+    <div class="addendum">
+      <h2>Addendum</h2>
+      <h3>Server Setup</h3>
+      <p>
+        I set up an Express.js server to handle both static file serving and
+        form submission. Middleware such as <code>express.urlencoded</code> was
+        used to parse URL-encoded form data, and <code>morgan</code> was used
+        for logging HTTP requests.
+      </p>
 
+      <h3>Form Design</h3>
+      <p>
+        The form was designed to be simple yet functional, with fields for noun,
+        verb, adjective, adverb, and place. All fields are marked as required to
+        ensure complete user input. Labels are provided for clarity.
+      </p>
+
+      <h3>Routing and Handling</h3>
+      <p>
+        A POST route <code>/ITC505/lab-7/index.html</code> was implemented to
+        handle form submissions. The route validates the input, ensuring no
+        fields are left empty, and constructs a mad lib story using the
+        submitted data. If validation fails, a response prompts the user to fill
+        out all fields.
+      </p>
+
+      <h3>CSS Styling</h3>
+      <p>
+        The form and page were styled using CSS to improve usability and
+        aesthetics.
+      </p>
+
+      <h3>Verification</h3>
+      <p>
+        The page was tested to ensure that it loads correctly, form validation
+        works, and the mad lib story is generated as expected. The last modified
+        date is displayed correctly in the footer.
+      </p>
+    </div>
     <footer>
       <p>Last updated: <span id="lastModified"></span></p>
     </footer>

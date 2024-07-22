@@ -1,0 +1,5 @@
+{
+  "appService.zipIgnorePattern": ["node_modules{,/**}", ".vscode{,/**}"],
+  "appService.defaultWebAppToDeploy": "/subscriptions/0e2e200e-a536-46aa-b48d-6269efed2644/resourceGroups/eshwarkyatham_group/providers/Microsoft.Web/sites/eshwarkyatham",
+  "appService.deploySubpath": "mod-7-dis"
+}

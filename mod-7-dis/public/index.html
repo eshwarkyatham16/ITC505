@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Delegation and JSON Example</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+      }
+      nav a {
+        margin-right: 20px;
+        text-decoration: none;
+        color: #007bff;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      .section {
+        display: none;
+      }
+      .section.active {
+        display: block;
+      }
+      pre {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        overflow-x: auto;
+      }
+      .output {
+        background-color: #eee;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      .task {
+        cursor: pointer;
+        padding: 10px;
+        margin: 5px;
+        background-color: lightgrey;
+      }
+      .task.clicked {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Event Delegation and JSON Example</h1>
+      <nav>
+        <a href="#" id="nav-tasks">Task List</a>
+        <a href="#" id="nav-status-codes">HTTP Status Codes</a>
+        <a href="#" id="nav-json">JSON Example</a>
+      </nav>
+
+      <!-- Task List Section -->
+      <div id="tasks" class="section active">
+        <h2>Task List</h2>
+        <div id="task-list">
+          <div class="task">Task 1</div>
+          <div class="task">Task 2</div>
+          <div class="task">Task 3</div>
+        </div>
+      </div>
+
+      <!-- HTTP Status Codes Section -->
+      <div id="status-codes" class="section">
+        <h2>HTTP Status Codes</h2>
+        <ul>
+          <li>
+            <h3>418 I'm a Teapot</h3>
+            <p><strong>Numerical Code:</strong> 418</p>
+            <p>
+              <strong>Purpose:</strong> This code was defined in 1998 as one of
+              the traditional IETF April Fools' jokes, in RFC 2324, Hyper Text
+              Coffee Pot Control Protocol.
+            </p>
+            <p>
+              <strong>Situation:</strong> A coffee pot should return this error
+              code if an attempt is made to brew coffee with it.
+            </p>
+          </li>
+          <li>
+            <h3>429 Too Many Requests</h3>
+            <p><strong>Numerical Code:</strong> 429</p>
+            <p>
+              <strong>Purpose:</strong> The user has sent too many requests in a
+              given amount of time ("rate limiting").
+            </p>
+            <p>
+              <strong>Situation:</strong> When a user exceeds the allowed number
+              of API requests per minute.
+            </p>
+          </li>
+          <li>
+            <h3>451 Unavailable For Legal Reasons</h3>
+            <p><strong>Numerical Code:</strong> 451</p>
+            <p>
+              <strong>Purpose:</strong> The server is denying access to the
+              resource as a consequence of a legal demand.
+            </p>
+            <p>
+              <strong>Situation:</strong> A website is blocked due to a court
+              order.
+            </p>
+          </li>
+          <li>
+            <h3>503 Service Unavailable</h3>
+            <p><strong>Numerical Code:</strong> 503</p>
+            <p>
+              <strong>Purpose:</strong> The server is not ready to handle the
+              request. Common causes are a server that is down for maintenance
+              or that is overloaded.
+            </p>
+            <p>
+              <strong>Situation:</strong> When a web server is temporarily
+              unable to handle a request.
+            </p>
+          </li>
+          <li>
+            <h3>507 Insufficient Storage</h3>
+            <p><strong>Numerical Code:</strong> 507</p>
+            <p>
+              <strong>Purpose:</strong> The server is unable to store the
+              representation needed to complete the request.
+            </p>
+            <p>
+              <strong>Situation:</strong> When a server runs out of storage
+              space.
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- JSON Example Section -->
+      <div id="json-example" class="section">
+        <h2>JSON Parsing and Stringifying Example</h2>
+        <h3>JavaScript Code</h3>
+        <pre>
+const movieCollection = `{
+    "movies": [
+        {
+            "title": "Pokiri",
+            "director": "Puri",
+            "year": 2010,
+            "genre": "Crime",
+            "actors": ["Mahesh Babu", "Ali"]
+        },
+        {
+            "title": "RRR",
+            "director": "Raja mouli",
+            "year": 2023,
+            "genre": "Sci-Fi",
+            "actors": ["NTR", "Ram Charan"]
+        }
+    ]
+}`;
+
+const parsedData = JSON.parse(movieCollection);
+console.log(parsedData);
+
+const stringifiedData = JSON.stringify(parsedData, null, 2);
+console.log(stringifiedData);
+        </pre>
+        <h3>Output</h3>
+        <div class="output">
+          <h4>Parsed Data:</h4>
+          <pre id="parsed-data-output"></pre>
+          <h4>Stringified Data:</h4>
+          <pre id="stringified-data-output"></pre>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("task-list")
+        .addEventListener("click", function (e) {
+          if (e.target && e.target.classList.contains("task")) {
+            e.target.classList.toggle("clicked");
+          }
+        });
+
+      const sections = {
+        "nav-tasks": "tasks",
+        "nav-status-codes": "status-codes",
+        "nav-json": "json-example",
+      };
+
+      document.querySelectorAll("nav a").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelectorAll(".section").forEach((section) => {
+            section.classList.remove("active");
+          });
+          document
+            .getElementById(sections[e.target.id])
+            .classList.add("active");
+        });
+      });
+
+      const movieCollection = `{
+          "movies": [
+              {
+                  "title": "Pokiri",
+                  "director": "Puri",
+                  "year": 2010,
+                  "genre": "Crime",
+                  "actors": ["Mahesh Babu", "Ali"]
+              },
+              {
+                  "title": "RRR",
+                  "director": "Raja mouli",
+                  "year": 2023,
+                  "genre": "Sci-Fi",
+                  "actors": ["NTR", "Ram Charan"]
+              }
+          ]
+      }`;
+
+      const parsedData = JSON.parse(movieCollection);
+      console.log(parsedData);
+
+      const stringifiedData = JSON.stringify(parsedData, null, 2);
+      console.log(stringifiedData);
+
+      document.getElementById("parsed-data-output").textContent =
+        JSON.stringify(parsedData, null, 2);
+      document.getElementById("stringified-data-output").textContent =
+        stringifiedData;
+    </script>
+  </body>
+</html>
